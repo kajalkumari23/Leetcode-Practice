@@ -1,5 +1,6 @@
 // two pointer approach T.C = O(n), S.C O(n)
-// hashset approach
+// hashset approach hasnet does not contain duplicates //brute force tc= O(nlogn) +O(n)
+// n for traversing into array and logn for inserting into the set and O(n) for removing element out of the set
 class Solution {
     public int removeDuplicates(int[] nums) {
         if(nums.length == 0){
