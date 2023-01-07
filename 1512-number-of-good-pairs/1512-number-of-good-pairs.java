@@ -1,14 +1,11 @@
-//bruteforce
 class Solution {
     public int numIdenticalPairs(int[] nums) {
-        int ans = 0;
-        for(int i = 0; i< nums.length; i++){
-            for(int j=i+1; j<nums.length; j++){
-                if(nums[i] == nums[j]){
-                    ans++;
-                }
-            }
+        int[] temp = new int[101];
+        int res = 0;
+        for(int i=0; i<nums.length; i++){
+            res+= temp[nums[i]];
+            temp[nums[i]]++;
         }
-        return ans;
+        return res;
     }
 }
