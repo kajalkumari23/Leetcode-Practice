@@ -1,11 +1,17 @@
 class Solution {
     public int missingNumber(int[] nums) {
         int n = nums.length;
-        int total = n*(n+1)/2;
-        int sum = 0;
-        for(int num: nums){
-            sum += num;
+        HashSet<Integer> hashset = new HashSet<>();
+        
+        for(int i=0; i<n; i++){
+            hashset.add(nums[i]);
         }
-        return total-sum;
+        for(int i=0; i<n; i++){
+            if(!hashset.contains(i)){
+                return i;
+            }
+        }
+        return n;
     }
 }
+
