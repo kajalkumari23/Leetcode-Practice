@@ -1,24 +1,10 @@
-//we can use bit manipulation technique also
 class Solution {
     public int singleNumber(int[] nums) {
-        HashMap<Integer, Integer>map = new HashMap<>();
-        for(int i=0; i<nums.length; i++){
-            if(!map.containsKey(nums[i])){
-                map.put(nums[i],1);
-            }
-            else{
-                map.put(nums[i], map.get(nums[i]) + 1);
-            }
+        int n = nums.length;
+        int a =0;
+        for(int i=0; i<n; i++){
+            a =a^nums[i];
         }
-        for(Map.Entry<Integer,Integer> entry : map.entrySet()){
-            Integer key = entry.getKey();
-            Integer value = entry.getValue();
-            if(map.get(key) == 1){
-                return key;
-            }
-        }
-        return -1;
+        return a;
     }
 }
-
-
